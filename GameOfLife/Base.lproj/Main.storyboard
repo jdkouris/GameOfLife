@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I4U-nw-jOM">
-                                <rect key="frame" x="20" y="96" width="374" height="660"/>
+                                <rect key="frame" x="20" y="96" width="374" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="660" id="kf4-wI-Uv4"/>
+                                    <constraint firstAttribute="height" constant="400" id="kf4-wI-Uv4"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="4kw-q6-lwQ">
                                     <size key="itemSize" width="50" height="50"/>
@@ -60,7 +60,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cNC-m9-6NK">
-                                <rect key="frame" x="16" y="764" width="382" height="30"/>
+                                <rect key="frame" x="16" y="504" width="382" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p1-gs-aWX">
                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="30"/>

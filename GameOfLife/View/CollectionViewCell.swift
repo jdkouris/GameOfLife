@@ -28,7 +28,7 @@ class CollectionViewCell:  UICollectionViewCell {
     private func configure() {
         squareView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(squareView)
-        squareView.layer.cornerRadius = 2
+        squareView.layer.cornerRadius = 5
         
         NSLayoutConstraint.activate([
             squareView.topAnchor.constraint(equalTo: contentView.topAnchor),
