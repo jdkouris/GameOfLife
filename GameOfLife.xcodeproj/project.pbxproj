@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CCA6FEAC24ECC0BA004D458F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEAB24ECC0BA004D458F /* AppDelegate.swift */; };
 		CCA6FEAE24ECC0BA004D458F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEAD24ECC0BA004D458F /* SceneDelegate.swift */; };
-		CCA6FEB024ECC0BA004D458F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEAF24ECC0BA004D458F /* ViewController.swift */; };
 		CCA6FEB324ECC0BA004D458F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA6FEB124ECC0BA004D458F /* Main.storyboard */; };
 		CCA6FEB524ECC0BC004D458F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA6FEB424ECC0BC004D458F /* Assets.xcassets */; };
 		CCA6FEB824ECC0BC004D458F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA6FEB624ECC0BC004D458F /* LaunchScreen.storyboard */; };
@@ -18,6 +17,8 @@
 		CCA6FEDC24ECC1B2004D458F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEDB24ECC1B2004D458F /* Cell.swift */; };
 		CCA6FEDE24ECC1F0004D458F /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEDD24ECC1F0004D458F /* GameState.swift */; };
 		CCA6FEE024ECC26B004D458F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEDF24ECC26B004D458F /* Game.swift */; };
+		CCA6FEE524EE091A004D458F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEE424EE091A004D458F /* GameViewController.swift */; };
+		CCA6FEE724EE092B004D458F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEE624EE092B004D458F /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,6 @@
 		CCA6FEA824ECC0B9004D458F /* GameOfLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA6FEAB24ECC0BA004D458F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA6FEAD24ECC0BA004D458F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CCA6FEAF24ECC0BA004D458F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CCA6FEB224ECC0BA004D458F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCA6FEB424ECC0BC004D458F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCA6FEB724ECC0BC004D458F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +55,8 @@
 		CCA6FEDB24ECC1B2004D458F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		CCA6FEDD24ECC1F0004D458F /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		CCA6FEDF24ECC26B004D458F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		CCA6FEE424EE091A004D458F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CCA6FEE624EE092B004D458F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,16 +107,15 @@
 		CCA6FEAA24ECC0B9004D458F /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
+				CCA6FEE124EE08A9004D458F /* Game */,
+				CCA6FEE324EE0900004D458F /* View */,
+				CCA6FEE224EE08F1004D458F /* Controller */,
 				CCA6FEAB24ECC0BA004D458F /* AppDelegate.swift */,
 				CCA6FEAD24ECC0BA004D458F /* SceneDelegate.swift */,
-				CCA6FEAF24ECC0BA004D458F /* ViewController.swift */,
 				CCA6FEB124ECC0BA004D458F /* Main.storyboard */,
 				CCA6FEB424ECC0BC004D458F /* Assets.xcassets */,
 				CCA6FEB624ECC0BC004D458F /* LaunchScreen.storyboard */,
 				CCA6FEB924ECC0BC004D458F /* Info.plist */,
-				CCA6FEDB24ECC1B2004D458F /* Cell.swift */,
-				CCA6FEDD24ECC1F0004D458F /* GameState.swift */,
-				CCA6FEDF24ECC26B004D458F /* Game.swift */,
 			);
 			path = GameOfLife;
 			sourceTree = "<group>";
@@ -135,6 +136,32 @@
 				CCA6FECF24ECC0BC004D458F /* Info.plist */,
 			);
 			path = GameOfLifeUITests;
+			sourceTree = "<group>";
+		};
+		CCA6FEE124EE08A9004D458F /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				CCA6FEDB24ECC1B2004D458F /* Cell.swift */,
+				CCA6FEDD24ECC1F0004D458F /* GameState.swift */,
+				CCA6FEDF24ECC26B004D458F /* Game.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		CCA6FEE224EE08F1004D458F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CCA6FEE424EE091A004D458F /* GameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CCA6FEE324EE0900004D458F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCA6FEE624EE092B004D458F /* CollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,11 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCA6FEB024ECC0BA004D458F /* ViewController.swift in Sources */,
 				CCA6FEE024ECC26B004D458F /* Game.swift in Sources */,
 				CCA6FEDC24ECC1B2004D458F /* Cell.swift in Sources */,
 				CCA6FEDE24ECC1F0004D458F /* GameState.swift in Sources */,
+				CCA6FEE724EE092B004D458F /* CollectionViewCell.swift in Sources */,
 				CCA6FEAC24ECC0BA004D458F /* AppDelegate.swift in Sources */,
+				CCA6FEE524EE091A004D458F /* GameViewController.swift in Sources */,
 				CCA6FEAE24ECC0BA004D458F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

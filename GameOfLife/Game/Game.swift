@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias GameStateObserver = ((GameState) -> Void)?
+
 class Game {
     let width: Int
     let height: Int
@@ -18,6 +20,17 @@ class Game {
         self.height = height
         let cells = Array(repeating: Cell.makeDeadCell(), count: width * height)
         currentState = GameState(cells: cells)
+    }
+    
+    func addStateObserver(_ observer: GameStateObserver) {
+        observer?(generateInitialState())
+        Timer.scheduledTimer(withTimeInterval: 0.33, repeats: true) { _ in
+            observer?(self.iterate())
+        }
+    }
+    
+    func reset() {
+        self.generateInitialState()
     }
     
     func iterate() -> GameState {
@@ -60,6 +73,28 @@ class Game {
             }
         }
         return numberOfAliveNeighbours
+    }
+    
+    func setInitialState(_ state: GameState) {
+        currentState = state
+    }
+    
+    @discardableResult
+    func generateInitialState() -> GameState {
+        let maxItems = width * height - 1
+        let initialStatePoints = self.generateRandom(between: 0...maxItems, count: maxItems/8)
+        
+        for point in initialStatePoints {
+            currentState[point] = Cell.makeLiveCell()
+        }
+        
+        return self.currentState
+    }
+    
+    private func generateRandom(between range: ClosedRange<Int>, count: Int) -> [Int] {
+        return Array(0...count).map { _ in
+            Int.random(in: range)
+        }
     }
     
 }
