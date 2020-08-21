@@ -22,12 +22,13 @@ class CollectionViewCell:  UICollectionViewCell {
     }
     
     func configureWithState(_ isAlive: Bool) {
-        self.squareView.backgroundColor = isAlive ? UIColor.blue : UIColor.purple
+        self.squareView.backgroundColor = isAlive ? UIColor.blue : UIColor.lightGray
     }
     
     private func configure() {
         squareView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(squareView)
+        squareView.layer.cornerRadius = 2
         
         NSLayoutConstraint.activate([
             squareView.topAnchor.constraint(equalTo: contentView.topAnchor),
