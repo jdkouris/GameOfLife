@@ -44,6 +44,10 @@ class Game {
         self.generateStopState()
     }
     
+    func clear() {
+        self.generateClearedState()
+    }
+    
     func runPreset1() {
         self.generatePreset1State()
     }
@@ -127,12 +131,16 @@ class Game {
     
     @discardableResult
     func generateStopState() -> GameState {
+        timer?.invalidate()
+        return self.currentState
+    }
+    
+    @discardableResult
+    func generateClearedState() -> GameState {
         for point in 0...624 {
-            if currentState[point].isAlive {
-                currentState[point] = Cell.makeLiveCell()
-            }
-            timer?.invalidate()
+            currentState[point] = Cell.makeDeadCell()
         }
+        timer?.invalidate()
         return self.currentState
     }
     

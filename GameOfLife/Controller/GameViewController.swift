@@ -42,6 +42,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
+        iteration.isHidden = false
         game = Game(width: boardWidth, height: boardHeight)
         game.addStateObserver(gameSpeed: simulationSpeed) { [weak self] state in
             self?.display(state)
@@ -60,6 +61,13 @@ class GameViewController: UIViewController {
     
     @IBAction func stopTapped(_ sender: UIButton) {
         game.stop()
+    }
+    
+    @IBAction func clearTapped(_ sender: UIButton) {
+        game.clear()
+        dataSource.removeAll()
+        collectionView.reloadData()
+        iteration.text = String(0)
     }
     
     @IBAction func preset1Tapped(_ sender: UIButton) {
