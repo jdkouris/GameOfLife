@@ -14,27 +14,55 @@ class Game {
     let width: Int
     let height: Int
     var currentState: GameState
+    var iterationCount: Int
+    var timer: Timer?
     
     init(width: Int, height: Int) {
         self.width = width
         self.height = height
+        self.iterationCount = 0
         let cells = Array(repeating: Cell.makeDeadCell(), count: width * height)
         currentState = GameState(cells: cells)
     }
     
-    func addStateObserver(_ observer: GameStateObserver) {
-        observer?(generateInitialState())
-        Timer.scheduledTimer(withTimeInterval: 0.33, repeats: true) { _ in
+    func addStateObserver(gameSpeed: Double, _ observer: GameStateObserver) {
+        observer?(generateRandomState())
+        timer = Timer.scheduledTimer(withTimeInterval: gameSpeed, repeats: true) { _ in
             observer?(self.iterate())
         }
     }
     
-    func reset() {
-        self.generateInitialState()
+    func removeStateObserver() {
+        NotificationCenter.default.removeObserver(GameStateObserver.self)
+    }
+    
+    func randomize() {
+        self.generateRandomState()
+    }
+    
+    func stop() {
+        self.generateStopState()
+    }
+    
+    func runPreset1() {
+        self.generatePreset1State()
+    }
+    
+    func runPreset2() {
+        self.generatePreset2State()
+    }
+    
+    func runPreset3() {
+        self.generatePreset3State()
+    }
+    
+    func runPreset4() {
+        self.generatePreset4State()
     }
     
     func iterate() -> GameState {
         var nextState = currentState
+        self.iterationCount += 1
         for i in 0...width - 1 {
             for j in 0...height - 1 {
                 let positionInTheArray = j * width + i
@@ -75,17 +103,94 @@ class Game {
         return numberOfAliveNeighbours
     }
     
+    // Need this for testing
     func setInitialState(_ state: GameState) {
         currentState = state
     }
     
     @discardableResult
-    func generateInitialState() -> GameState {
+    func generateRandomState() -> GameState {
+        iterationCount = 0
         let maxItems = width * height - 1
+        for point in 0...maxItems {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
         let initialStatePoints = self.generateRandom(between: 0...maxItems, count: maxItems/8)
         
         for point in initialStatePoints {
             currentState[point] = Cell.makeLiveCell()
+        }
+        
+        return self.currentState
+    }
+    
+    @discardableResult
+    func generateStopState() -> GameState {
+        for point in 0...624 {
+            if currentState[point].isAlive {
+                currentState[point] = Cell.makeLiveCell()
+            }
+            timer?.invalidate()
+        }
+        return self.currentState
+    }
+    
+    @discardableResult
+    func generatePreset1State() -> GameState {
+        iterationCount = 0
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        for point in 0...24 {
+            currentState[point] = Cell.makeLiveCell()
+        }
+        
+        return self.currentState
+    }
+    
+    @discardableResult
+    func generatePreset2State() -> GameState {
+        iterationCount = 0
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        for point in 0...200 {
+            if point % 2 == 0 {
+                currentState[point] = Cell.makeLiveCell()
+            }
+        }
+        
+        return self.currentState
+    }
+    
+    @discardableResult
+    func generatePreset3State() -> GameState {
+        iterationCount = 0
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        for point in 300...600 {
+            currentState[point] = Cell.makeLiveCell()
+        }
+        
+        return self.currentState
+    }
+    
+    @discardableResult
+    func generatePreset4State() -> GameState {
+        iterationCount = 0
+        for point in 0...624 {
+            currentState[point] = Cell.makeDeadCell()
+        }
+        
+        for point in 0...624 {
+            if point % 2 == 0 {
+                currentState[point] = Cell.makeLiveCell()
+            }
         }
         
         return self.currentState
