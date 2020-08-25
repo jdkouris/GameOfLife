@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC8C878924F4459F00E27CA5 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8C878824F4459F00E27CA5 /* Notification+Extension.swift */; };
 		CCA6FEAC24ECC0BA004D458F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEAB24ECC0BA004D458F /* AppDelegate.swift */; };
 		CCA6FEAE24ECC0BA004D458F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA6FEAD24ECC0BA004D458F /* SceneDelegate.swift */; };
 		CCA6FEB324ECC0BA004D458F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA6FEB124ECC0BA004D458F /* Main.storyboard */; };
@@ -40,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CC8C878824F4459F00E27CA5 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		CCA6FEA824ECC0B9004D458F /* GameOfLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA6FEAB24ECC0BA004D458F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA6FEAD24ECC0BA004D458F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,14 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CC8C878724F4458300E27CA5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				CC8C878824F4459F00E27CA5 /* Notification+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		CCA6FE9F24ECC0B9004D458F = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +107,6 @@
 		CCA6FEAA24ECC0B9004D458F /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
-				CC8C878724F4458300E27CA5 /* Extensions */,
 				CCA6FEE124EE08A9004D458F /* Game */,
 				CCA6FEE324EE0900004D458F /* View */,
 				CCA6FEE224EE08F1004D458F /* Controller */,
@@ -312,7 +301,6 @@
 				CCA6FEE724EE092B004D458F /* CollectionViewCell.swift in Sources */,
 				CCA6FEAC24ECC0BA004D458F /* AppDelegate.swift in Sources */,
 				CCA6FEE524EE091A004D458F /* GameViewController.swift in Sources */,
-				CC8C878924F4459F00E27CA5 /* Notification+Extension.swift in Sources */,
 				CCA6FEAE24ECC0BA004D458F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
