@@ -46,7 +46,6 @@ class GameViewController: UIViewController {
         game.addStateObserver(gameSpeed: simulationSpeed) { [weak self] state in
             self?.display(state)
         }
-//        NotificationCenter.default.addObserver(self, selector: #selector(updateCells), name: .cellUpdate, object: nil)
     }
     
     func display(_ state: GameState) {

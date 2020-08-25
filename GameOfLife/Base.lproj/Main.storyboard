@@ -138,7 +138,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game of Life" id="Awa-9q-h0C">
-                        <barButtonItem key="rightBarButtonItem" title="Info" id="NEk-g4-3o2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="NEk-g4-3o2">
+                            <connections>
+                                <segue destination="Fel-ho-hUy" kind="show" id="P9U-A6-exG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="I4U-nw-jOM" id="REM-MD-Cvf"/>
@@ -148,7 +152,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+            <point key="canvasLocation" x="987" y="138"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="qeO-6F-crJ">
+            <objects>
+                <viewController id="Fel-ho-hUy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5R1-8B-skK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A91-BM-vea">
+                                <rect key="frame" x="20" y="108" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7mT-Ha-nb2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7h3-8j-Wmd">
+                                <rect key="frame" x="20" y="218" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="iNS-Ws-Boi"/>
+                                </constraints>
+                                <string key="text">1. Any live cell with two or three live neighbours survives.
+
+2. Any dead cell with three live neighbours becomes a live cell.
+
+3. All other live cells die in the next generation. Similarly, all other dead cells stay dead.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="A91-BM-vea" firstAttribute="leading" secondItem="O7u-ah-w7c" secondAttribute="leading" constant="20" id="Pjo-s3-iTG"/>
+                            <constraint firstItem="O7u-ah-w7c" firstAttribute="trailing" secondItem="7h3-8j-Wmd" secondAttribute="trailing" constant="20" id="Ugr-T7-ZEZ"/>
+                            <constraint firstItem="7h3-8j-Wmd" firstAttribute="leading" secondItem="O7u-ah-w7c" secondAttribute="leading" constant="20" id="Wja-r1-qss"/>
+                            <constraint firstItem="O7u-ah-w7c" firstAttribute="trailing" secondItem="A91-BM-vea" secondAttribute="trailing" constant="20" id="ZEU-TO-dIp"/>
+                            <constraint firstItem="7h3-8j-Wmd" firstAttribute="top" secondItem="A91-BM-vea" secondAttribute="bottom" constant="50" id="eTu-Rl-lst"/>
+                            <constraint firstItem="A91-BM-vea" firstAttribute="top" secondItem="O7u-ah-w7c" secondAttribute="top" constant="20" id="jsB-tc-zDT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O7u-ah-w7c"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Info" id="C48-qb-Esl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpV-b3-p6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.0434782608697" y="137.94642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KLj-v8-m6x">
