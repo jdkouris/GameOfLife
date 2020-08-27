@@ -19,15 +19,11 @@ class GameViewController: UIViewController {
     var pickerData = [Double]()
     
     let pixelSize = 10
-    var boardWidth = 25
-    var boardHeight = 25
+    let boardWidth = 25
+    let boardHeight = 25
     var simulationSpeed: Double = 1.0
     
     var game: Game!
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +40,7 @@ class GameViewController: UIViewController {
     @IBAction func startButtonTapped(_ sender: UIButton) {
         iteration.isHidden = false
         game = Game(width: boardWidth, height: boardHeight)
-        game.addStateObserver(gameSpeed: simulationSpeed) { [weak self] state in
+        game.start(gameSpeed: simulationSpeed) { [weak self] state in
             self?.display(state)
         }
     }
@@ -67,7 +63,7 @@ class GameViewController: UIViewController {
         game.clear()
         dataSource.removeAll()
         collectionView.reloadData()
-        iteration.text = String(0)
+        iteration.text = "0"
     }
     
     @IBAction func preset1Tapped(_ sender: UIButton) {
