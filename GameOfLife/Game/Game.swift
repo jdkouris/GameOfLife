@@ -6,7 +6,7 @@
 //  Copyright © 2020 John Kouris. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias GameStateObserver = ((GameState) -> Void)?
 
@@ -71,8 +71,8 @@ class Game {
     }
     
     // MARK: - Presets
-    
     // Methods that run preset configurations on the game board
+    
     @discardableResult
     func runPreset1() -> GameState {
         iterationCount = 0

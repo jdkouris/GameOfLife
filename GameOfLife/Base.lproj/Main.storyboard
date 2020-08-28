@@ -158,6 +158,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game of Life" id="Awa-9q-h0C">
+                        <barButtonItem key="leftBarButtonItem" title="Choose Color" id="dhz-OY-L7D">
+                            <connections>
+                                <action selector="chooseColorTapped:" destination="BYZ-38-t0r" id="pmv-uD-esa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Info" id="NEk-g4-3o2">
                             <connections>
                                 <segue destination="Fel-ho-hUy" kind="show" id="P9U-A6-exG"/>

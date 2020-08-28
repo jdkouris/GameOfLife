@@ -21,14 +21,13 @@ class CollectionViewCell:  UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureWithState(_ isAlive: Bool) {
-        self.squareView.backgroundColor = isAlive ? UIColor.blue : UIColor.lightGray
+    func configureWithState(_ isAlive: Bool, cellColor: UIColor) {
+        self.squareView.backgroundColor = isAlive ? cellColor : UIColor.lightGray
     }
     
     private func configure() {
         squareView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(squareView)
-        squareView.layer.cornerRadius = 5
         
         NSLayoutConstraint.activate([
             squareView.topAnchor.constraint(equalTo: contentView.topAnchor),
